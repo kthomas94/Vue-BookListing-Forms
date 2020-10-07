@@ -20,12 +20,20 @@
       placeholder="Book Author"
     />
     <div>
-      <label for="finishedReading">Finished Reading</label>
-      <input type="checkbox" v-model="bookData.finishedReading" />
-      <label for="borrowed">borrowed</label>
-      <input type="radio" v-model="bookData.ownership" value="borrowed" />
-      <label for="bought">bought</label>
-      <input type="radio" v-model="bookData.ownership" value="bought" />
+      <label for="finishedReading"
+        >Finished Reading
+        <input type="checkbox" v-model="bookData.finishedReading" />
+      </label>
+
+      <label for="borrowed"
+        >borrowed
+        <input type="radio" v-model="bookData.ownership" value="borrowed" />
+      </label>
+
+      <label for="bought"
+        >bought
+        <input type="radio" v-model="bookData.ownership" value="bought" />
+      </label>
     </div>
     <button type="submit" name="button">Add Book</button>
   </form>
@@ -47,7 +55,7 @@ export default {
   },
   methods: {
     bookSubmit(bookData) {
-      this.$emit("addBook", this.bookData);
+      this.$emit("addBook", bookData);
     },
   },
 };
